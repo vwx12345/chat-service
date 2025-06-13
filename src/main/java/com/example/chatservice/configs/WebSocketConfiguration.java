@@ -1,5 +1,6 @@
 package com.example.chatservice.configs;
 
+import com.example.chatservice.handlers.WebSocketChatHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.WebSocketHandler;
@@ -13,6 +14,10 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 public class WebSocketConfiguration implements WebSocketConfigurer {
 
   final WebSocketHandler webSocketHandler;
+
+  public WebSocketConfiguration() {
+    this.webSocketHandler = new WebSocketChatHandler();
+  }
 
   @Override
   public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
