@@ -55,7 +55,10 @@ function setConnected(connected) {
 }
 
 $(function () {
+  // connect 버튼 클릭시 -> connect 함수 실행
   $("#connect").click(() => connect());
+  // disconnect 버튼 클릭시 -> disconnect 함수 실행
   $("#disconnect").click(() => disconnect());
+  // send 버튼 클릭시 -> send 함수 실행
   $("#send").click(() => sendMessage());
 });
